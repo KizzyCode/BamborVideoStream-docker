@@ -1,0 +1,11 @@
+services:
+  bambor-videostream:
+    init: true
+    build: ./
+    ports:
+      - "127.0.0.1:8888:8080"
+    environment:
+      # Listen on port 8080
+      - BAMBORVIDEOSTREAM_SOCKADDR=0.0.0.0:8080
+      # Disable API key by accepting an empty key
+      - BAMBORVIDEOSTREAM_APIKEYSHA256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
